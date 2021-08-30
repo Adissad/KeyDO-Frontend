@@ -9,16 +9,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import StartScreen from './screens/StartScreen';
 import ConnexionScreen from './screens/ConnexionScreen';
+import SignInScreen from './screens/SignInScreen';
 import SpotifyRedirectionScreen from './screens/SpotifyRedirectionScreen';
 import AppleRedirectionScreen from './screens/AppleRedirectionScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import HomeScreen from './screens/HomeScreen';
-import MatchScreen from './screens/MatchScreen';
+import MatchScreen from './screens/MatchScreen'; 
 import ConvScreen from './screens/ConvScreen';
 import ChatScreen from './screens/ChatScreen';
 import RemyChatScreen from './screens/RemyChatScreen';
 import MasiChatScreen from './screens/MasiChatScreen';
 import SettingsScreen from './screens/SettingsScreen';
+
 
 import DanceScreen from './screens/GenresMusic/DanceScreen';
 import RnBScreen from './screens/GenresMusic/RnBScreen';
@@ -52,6 +54,7 @@ const store = createStore(combineReducers({ token }));
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+// Mise en place du menu
 const BottomNavigator = () => {
   return (
     <Tab.Navigator
@@ -95,6 +98,7 @@ const BottomNavigator = () => {
   );
 };
 
+// Mise en place de la navigation 
 export default function App() {
   return (
 		<Provider store={store}>
@@ -102,6 +106,7 @@ export default function App() {
 				<Stack.Navigator screenOptions={{ headerShown: false }}>
 					<Stack.Screen name="Start" component={StartScreen} />
 					<Stack.Screen name="Connexion" component={ConnexionScreen} />
+          <Stack.Screen name="SignIn" component={SignInScreen} />
 					<Stack.Screen name="Spotify" component={SpotifyRedirectionScreen} />
 					<Stack.Screen name="Apple" component={AppleRedirectionScreen} />
 					<Stack.Screen name="Profile" component={ProfileScreen} />
